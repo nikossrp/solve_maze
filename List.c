@@ -67,7 +67,7 @@ void Delete_Select_List(int R, int C, NodeType **L)
       NodeType* Temp;
 
       N=*L;
-      while (N != NULL){   //briskei ton kombo
+      while (N != NULL){   
         if (N->row == R && N->column == C){
            break;
         } else {
