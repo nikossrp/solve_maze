@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include "Stack.h"
 
-void InitializeStack(Stack* S)  //o pointer pou deixnei sthn stiva einai NULL, Dhladh arxizoume me kenh stoiva
+void InitializeStack(Stack* S) 
 {
     S->ItemList = NULL;
 }
@@ -12,7 +12,7 @@ int Empty(Stack* S)
     return S->ItemList == NULL;
 }
 
-int Full(Stack* S) //den einai Full ,dhladh den exoume periorismo edw ( kanonika exoume to heap kapoia stigmi tha gemish)
+int Full(Stack* S) 
 {
     return 0;
 }
