@@ -64,7 +64,7 @@ void get_maze(char* file_name)
     x = atoi(rows);
     y = atoi(cols);
 
-    for(i = 0; i < 6; i++) { // ftiaxnw ton labirintho
+    for(i = 0; i < 6; i++) { // build the maze
         for(j = 0; j < 6; j++) {
             c = getc(file);     
            
@@ -86,10 +86,10 @@ void path(char M[6][6])
     Stack S;
     InitializeStack(&S);
     NodeType* L = NULL;
-    Push(&S, i, j);     //arxiki thesh
+    Push(&S, i, j);     //start point
    
     while(1) {
-  //   printf("Eimai sto : %d %d\n", i, j);
+  //   printf("We are at the point : %d %d\n", i, j);
      if(M[i][j] == '#' ) {
         printf("Oxi prosvasimi thesi\n");
         break;
@@ -123,17 +123,17 @@ void path(char M[6][6])
      if(M[i+1][j] == '.' || M[i+1][j] == 'G') //katw
       Push(&S, i+1, j);
 
-     if(M[i][j+1] == '.' )  //dexia
+     if(M[i][j+1] == '.' )  //right
       Push(&S, i, j+1);
 
-     if(M[i][j-1] == '.' ) //aristera
+     if(M[i][j-1] == '.' ) //left
       Push(&S, i, j-1);  
 
-     if(M[i-1][j] == '.' ) //panw
+     if(M[i-1][j] == '.' ) //up
       Push(&S, i-1, j);
 
 
-    //an uparxei adiexodo opisthodromise
+    //if there is a dead end turn around
      while(M[i+1][j] != '.' &&  M[i][j+1] != '.' && M[i][j-1] != '.' && M[i-1][j] != '.')
      {
         if(M[i][j-1] == '+' && M[i][j+1] != '.' && M[i+1][j] != '.' && M[i-1][j] != '.') {
