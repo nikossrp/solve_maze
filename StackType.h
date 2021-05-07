@@ -1,4 +1,4 @@
-//stiva me listes
+//linked stack
 typedef int ItemType;
 
 typedef struct StackNodeTag{    
